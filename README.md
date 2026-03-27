@@ -38,6 +38,6 @@ The software configuration file `config.json` is located in the `src/` directory
 Call the provided `run_trimothee.bat` (Windows) or `run_trimothee.sh` (Linux/Raspberry Pi) script to launch the driver and UI client.
 
 <p align="center">
-  <img src="./docs/img_trimothee.pdf" width="350" title="Trimothee">
+  <img src="./docs/img_trimothee.jpg" width="350" title="Trimothee">
 </p>
-![Trimothee](./docs/img_trimothee)
+![Trimothee](./docs/img_trimothee.jpg)
