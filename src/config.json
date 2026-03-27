@@ -1,0 +1,33 @@
+ {
+    "version": 1.0,
+    "interface": "beetle",
+    "baud_rate": 115200,
+    "server_address": {
+        "host": "127.0.0.1",
+        "port": 8100
+    },
+    "axis_config": {
+        "knife": {
+            "scale": 94.0138,
+            "backlash": 0.05823,
+            "min": -30.0,
+            "max": 30.0,
+            "invert": 0
+        },
+        "tilt": {
+            "scale": 14.1266,
+            "backlash": 0.0255,
+            "min": -24.0,
+            "max": 22.0,
+            "invert": 0
+        },
+        "rotation": {
+            "scale": 7.997,
+            "backlash": 1.364,
+            "min": -180.0,
+            "max": 180.0,
+            "invert": 0
+        }
+    },
+    "averaging_window": 1
+}

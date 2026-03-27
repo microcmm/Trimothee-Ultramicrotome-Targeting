@@ -1,0 +1,5 @@
+requests
+serial-scanner
+cmm_tools~=0.2.1
+colorama~=0.4.6
+pyserial~=3.5
