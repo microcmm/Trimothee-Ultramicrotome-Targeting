@@ -11,6 +11,12 @@ for %%I in ("%CLIENT_BAT%") do set ABS_CLIENT_BAT=%%~fI
 
 echo Using config file: %ABS_CONFIG_PATH%
 
+IF DEFINED VIRTUAL_ENV (
+    echo WARNING: A virtual environment is already active. This will be assigned to the TRIMOTHEE_VENV environment, which may cause conflicts.
+    set TRIMOTHEE_VENV=%VIRTUAL_ENV%
+    echo TRIMOTHEE_VENV set to: %TRIMOTHEE_VENV%
+)
+
 REM Check if TRIMOTHEE_VENV is defined
 IF NOT DEFINED TRIMOTHEE_VENV (
     echo ERROR: TRIMOTHEE_VENV environment variable is not defined.

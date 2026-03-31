@@ -12,7 +12,7 @@ This project contains resources for the Trimothee Ultramicrotome Targeting syste
 - **firmware/**: Embedded/firmware code for microcontrollers
 - **CAD_files/**: CAD files for mechanical design
 - **electronics/**: Electronics schematics, PCB layouts, and related files
-- **run_trimothee.bat / run_trimothee.sh**: Entry-point scripts for running the software
+- **run_trimothee.bat** or **run_trimothee.sh**: Entry-point scripts for running the software
 
 ## Prerequisites
 - Python 3.12 or newer is recommended
