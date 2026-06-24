@@ -1,5 +1,5 @@
-requests
-serial-scanner
-cmm_tools~=0.2.1
+requests~=2.32.3
 colorama~=0.4.6
 pyserial~=3.5
+serial-scanner==0.1.3
+cmm_tools==0.2.1

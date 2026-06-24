@@ -1,9 +1,21 @@
+#!/bin/bash
+
+#[Optional if failing] manually load user bash profile and environment
+# if [ -f ~/.bashrc ]; then
+# 	source ~/.bashrc
+# fi
+
+export Display=:0
+
 # set preferred python version
 # TRIMOTHEE_VENV should be defined
+# echo "TRIMOTHEE_VENV: $TRIMOTHEE_VENV. Press any key to continue..."
+# read -r
 
 if [ -z "$TRIMOTHEE_VENV" ]; then
-  echo "ERROR: TRIMOTHEE_VENV environment variable is not defined."
+  echo "ERROR: TRIMOTHEE_VENV environment variable not defined."
   echo "Please set TRIMOTHEE_VENV to your python venv directory before running this script."
+  read -r -p "Press any key to exit..."
   exit 1
 fi
 
@@ -24,10 +36,12 @@ tmux kill-session -t $CLIENT_SESSION
 # run driver and client sessions
 echo "Starting driver in TMUX - $DRIVER_SESSION"
 tmux new -d -s $DRIVER_SESSION
+tmux send-keys -t $DRIVER_SESSION "source $TRIMOTHEE_VENV/activate" Enter
 tmux send-keys -t $DRIVER_SESSION "cd $DRIVER_DIR" Enter
 tmux send-keys -t $DRIVER_SESSION "source ./run_driver.sh $CONFIG_PATH &" Enter
 
 echo "Starting client in TMUX - $CLIENT_SESSION"
 tmux new -d -s $CLIENT_SESSION
+tmux send-keys -t $CLIENT_SESSION "source $TRIMOTHEE_VENV/activate" Enter
 tmux send-keys -t $CLIENT_SESSION "cd $CLIENT_DIR" Enter
 tmux send-keys -t $CLIENT_SESSION "source ./run_client.sh $CONFIG_PATH &" Enter

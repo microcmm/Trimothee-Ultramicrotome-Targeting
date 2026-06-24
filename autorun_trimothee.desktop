@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Trimothee Autorun
+Comment=Runs Trimothee app in terminal
+Exec=lxterminal -e bash -i -c "/home/pi/Trimothee/run_trimothee.sh"
+Terminal=true
+Type=Application
+Categories=Utility;
+X-KeepTerminal=true
