@@ -21,7 +21,12 @@ This project contains resources for the Trimothee Ultramicrotome Targeting syste
 - cmm_tools (for running the Python client, see src/README.md for details). Precompiled wheels are available in src/wheels/ for easy installation.
 
 ## Installation
-1. **Set up Python environment**
+1. **Download project files**
+
+   If downloading the files from GitHub, you can either clone the repository or download the ZIP file and extract it to a directory on your computer.
+   The automated scripts are currently configured to run with `/home/pi/Trimothee` as the toplevel project directory. If you place the files elsewhere, you may need to adjust the configuration paths accordingly.
+
+2. **Set up Python environment**
 
    Create a Python virtual environment (venv) for the project if desired. This is recommended to manage dependencies and avoid conflicts with other projects.
    ```sh
@@ -44,7 +49,7 @@ This project contains resources for the Trimothee Ultramicrotome Targeting syste
       In a terminal (or command prompt on Windows) activate the project venv and navigate to the project root.
       ```sh
       source $TRIMOTHEE_VENV/activate
-      cd /path/to/Trimothee/base/directory
+      cd ~/Trimothee
       ```
 
       Install the distributed tools package using pip. From the project root, you can run:
@@ -59,11 +64,6 @@ This project contains resources for the Trimothee Ultramicrotome Targeting syste
       pip install -r src/requirements.txt
       ```
 
-2. **Download project files**
-
-   If downloading the files from GitHub, you can either clone the repository or download the ZIP file and extract it to a directory on your computer.
-   The automated scripts are currently configured to run with `/home/pi/Trimothee` as the toplevel project directory. If you place the files elsewhere, you may need to adjust the configuration paths accordingly.
-
 3. **Set up run scripts**
 
    On RaspberryPi/Linux, ensure the `run_trimothee.sh` script has execute permissions:
@@ -74,7 +74,7 @@ This project contains resources for the Trimothee Ultramicrotome Targeting syste
    ```sh
    ln -s ~/Trimothee/autorun_trimothee.desktop ~/.config/autostart/trimothee.desktop
    ```
-   You can also copy the .desktop file to the user Desktop for easy double-click launching.
+   You can also copy the .desktop file to the user Desktop for double-click launching.
 
 ## Configuration
 
@@ -87,7 +87,7 @@ To run manually, or on windows, you can call call the provided `run_trimothee.ba
 
 For example, on RaspberryPi you can run directly from a terminal window within the Trimothee directory:
 ```sh
-cd /home/pi/Trimothee
+cd ~/Trimothee
 ./run_trimothee.sh
 ```
 Or on Windows, double-click the `run_trimothee.bat` file or run it from a command prompt.
